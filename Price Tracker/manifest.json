@@ -1,0 +1,41 @@
+{
+    "manifest_version": 3,
+    "name": "Price Tracker",
+    "version": "0.1",
+    "author": "Vibhor",
+    "description": "This extension will help you to create a price tracker for amazon.",
+    "permissions": [
+      "storage",
+      "tabs"
+    ],
+    "content_scripts": [
+      {
+        "matches": [
+            "<all_urls>"
+        ],
+        "js": [
+          "content.js"
+        ]
+      }
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "web_accessible_resources": [
+      {
+        "resources": [
+          "assets/tracking.png"
+        ],
+        "matches":["<all_urls>"]
+      }
+    ],
+    "action": {
+      "default_icon": {
+        "16": "assets/tracking.png",
+        "24": "assets/tracking.png",
+        "32": "assets/tracking.png"
+      },
+      "default_title": "tracker",
+      "default_popup": "popup.html"
+    }
+  }
